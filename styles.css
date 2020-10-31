@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after {
+ box-sizing: border-box
+}
+
+:root {
+ --accent-color: #303F9F;
+ --heading-font-family: "Poppins", sans-serif;
+ --body-font-family: "Lato", sans-serif;
+}
+
+body {
+ margin: 0;
+ background-color: #C5CAE9;
+ min-height: 100vh;
+ min-width: 100vw;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-family: var(--body-font-family);
+}
+
+.price-comparison {
+ display: flex;
+ /* Put content side by side */
+ justify-content: center;
+ align-items: stretch;
+ width: 100%;
+ margin: 1rem;
+}
+
+.price-column {
+ background-color: #FFFFFF;
+ box-shadow: 0 7px 30px rgba(52, 31, 97, 0.1);
+ padding: 2rem;
+ flex-grow: 1;
+ flex-basis: 0;
+ max-width: 275px;
+ border-radius: 8px;
+}
+
+.price-column.popular {
+ position: relative;
+ background-color: var(--accent-color);
+ box-shadow: 0 7px 30px rgba(52, 13, 135, 0.3);
+ color: white;
+ margin-top: -1.5rem;
+ padding-top: 3.5rem;
+ margin-bottom: -1.5rem;
+ padding-bottom: 3.5rem;
+}
+
+.price-column:first-child {
+ border-top-right-radius: 0;
+ border-bottom-right-radius: 0;
+}
+
+.price-column:last-child {
+ border-top-left-radius: 0;
+ border-bottom-left-radius: 0;
+}
+
+.price-header {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-family: var(--heading-font-family);
+ font-weight: bold;
+}
+
+.price {
+ display: flex;
+ font-size: 3.5rem;
+}
+
+.dollar-sign {
+ font-size: 1.5rem;
+ margin-top: .5rem;
+ /* Bring it a little down*/
+ margin-right: .25rem;
+ /* Its to close to "20" */
+}
+
+.per-month {
+ font-size: .75rem;
+ /* Reduce the size of month*/
+ align-self: flex-end;
+ /*Bring it down, close to "20"*/
+ margin-bottom: 1.1rem;
+ text-transform: uppercase;
+ /* Capitalize the MO */
+}
+
+/* Do the exacly same thing to ou plan name */
+.plan-name {
+ text-transform: uppercase;
+ font-size: .9rem;
+ /* decrease our plan name a bit */
+ margin-top: 1rem;
+ /* Give us a little bit of space in betwen: price and the plan name */
+ margin-bottom: 0;
+}
+
+.divider {
+ height: 1px;
+ /* Just 1px heigh */
+ width: 100%;
+ /* its gonna take the full width but will be just 1px tall */
+ /* almost transparent: a faint line*/
+ background-color: rgba(0, 0, 0, .2);
+ /* Push away from our content: */
+ margin-top: 2rem;
+ margin-bottom: 2rem;
+}
+
+/* Lets select our popular and make and white for ou Popular */
+.price-column.popular .divider {
+ background-color: rgba(255, 255, 255, .2);
+}
+
+.feature {
+ /* The main thing we are gonna do is change layout to displa flex */
+ display: flex;
+ /* We want to aligh this item in the center*/
+ align-items: center;
+ /* add a litle bit of verticle space*/
+ margin: .5rem;
+}
+
+/* Styling our IMG */
+.feature img {
+ height: 1.1em;
+ width: 1.1em;
+ /* also I want to give a little bit of margin on the right */
+ margin-right: .5rem;
+}
+
+.feature.inactive {
+ color: #999;
+ /* a graysing color */
+ text-decoration-line: line-through;
+}
+
+.most-popular {
+ position: absolute;
+ /* now we can position it*/
+ top: .5rem;
+ left: .5rem;
+ right: .5rem;
+ text-align: center;
+ text-transform: uppercase;
+ font-weight: bold;
+ font-family: var(--heading-font-family);
+}
+
+.cta {
+ /* first thing we are gonna do, remove the border */
+ border: none;
+ background-color: var(--accent-color);
+ /* pick a color for our text, easy to red */
+ color: white;
+ /* we want it fo fill the entire widht of our container*/
+ width: 100%;
+ /* Add a little bit of padding*/
+ padding: .75rem 1rem;
+ /* change the cursor so, the user know he can click on it*/
+ cursor: pointer;
+ /* change the font-family to our Heading FM */
+ font-family: var(--heading-font-family);
+ font-weight: bold;
+ border-radius: 4px;
+ /* move away from our content */
+ margin-top: 3rem;
+ /* make our animation smoth */
+ transition: 100ms;
+}
+
+.price-column.popular .cta {
+ background-color: white;
+ color: var(--accent-color);
+}
+
+.cta:hover,
+cta:focus {
+ /* increase the button size*/
+ transform: scale(1.1);
+}
